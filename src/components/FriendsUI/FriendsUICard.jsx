@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const FriendsUICard = ({ app }) => {
 
@@ -9,7 +10,9 @@ const getStatusStyle = (status) =>
     : "bg-gray-100 text-gray-600";
 
     return (
-        <div className=" bg-white shadow-md rounded-xl p-5 flex flex-col items-center text-center hover:shadow-lg transition">
+        <Link href={`/friends/${app.id}`}>
+            <div className="bg-white shadow-md cursor-pointer rounded-xl p-5 flex flex-col items-center text-center hover:shadow-lg transition">
+        
 
             <Image
               src={app.picture}
@@ -41,10 +44,8 @@ const getStatusStyle = (status) =>
                 {app.status.toUpperCase()}
             </span>
 
-
-
-
         </div>
+        </Link>
     );
 };
 

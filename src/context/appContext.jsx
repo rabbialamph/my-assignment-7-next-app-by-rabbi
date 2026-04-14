@@ -7,6 +7,8 @@ const AppDataProvider = ({children}) => {
   const [apps, setApps] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  
+
   useEffect(() => {
     const fetchApps = async () => { 
         const res = await fetch("/friends.json");

@@ -3,6 +3,7 @@
 import { useApps } from "@/hooks/useApps";
 
 const StatsCard = () => {
+  
   const { apps } = useApps();
   const onTrack = apps?.filter(friend => friend.status === "on-track").length || 0;
   const needAttention = apps?.filter(friend => friend.status === "almost due" || friend.status === "overdue").length || 0;
