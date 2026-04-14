@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 const AppDataProvider = ({children}) => {
   const [apps, setApps] = useState([]);
-  const [loading, setLoading] = useState(true);
+
 
   
 
@@ -14,7 +14,7 @@ const AppDataProvider = ({children}) => {
         const res = await fetch("/friends.json");
         const data = await res.json();
         setApps(data);
-        setLoading(false);
+
       }
     fetchApps();
   }, []);
@@ -23,7 +23,7 @@ const AppDataProvider = ({children}) => {
   const data = {
     apps,
     setApps,
-    loading
+   
   };
 
     return (
