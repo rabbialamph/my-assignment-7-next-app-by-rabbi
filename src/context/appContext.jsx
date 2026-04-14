@@ -14,7 +14,7 @@ const AppDataProvider = ({children}) => {
         const res = await fetch("/friends.json");
         const data = await res.json();
         setApps(data);
-
+ 
       }
     fetchApps();
   }, []);
@@ -23,7 +23,7 @@ const AppDataProvider = ({children}) => {
   const data = {
     apps,
     setApps,
-   
+
   };
 
     return (
