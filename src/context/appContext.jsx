@@ -3,34 +3,31 @@ import { createContext, useEffect, useState } from "react";
 
 export const AppContext = createContext();
 
-const AppDataProvider = ({children}) => {
-  const [apps, setApps] = useState([]);
+const AppDataProvider = ({ children }) => {
 
-
-  
+  const [friends, setFriends] = useState([]);  
+  const [history, setHistory] = useState([]);  
 
   useEffect(() => {
-    const fetchApps = async () => { 
-        const res = await fetch("/friends.json");
-        const data = await res.json();
-        setApps(data);
- 
-      }
-    fetchApps();
+    const fetchFriends = async () => {
+      const res = await fetch("/friends.json");
+      const data = await res.json();
+      setFriends(data);
+    };
+    fetchFriends();
   }, []);
 
-
   const data = {
-    apps,
-    setApps,
-
+    friends,
+    history,
+    setHistory,
   };
 
-    return (
-        <AppContext.Provider value={ data }>
-            {children}
-        </AppContext.Provider>
-    );
+  return (
+    <AppContext.Provider value={data}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export default AppDataProvider;

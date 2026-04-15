@@ -14,7 +14,7 @@ const Footer = () => {
              <nav className="grid grid-flow-col gap-4">
               <Link href="/">
                 <Image src={logoimg}
-                   alt="Logo"
+                   alt="keenkeeper logo"
                    width={280}
                    height={280}
                    className='mb-2'
